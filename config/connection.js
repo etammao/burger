@@ -26,6 +26,13 @@ class Database {
 
 if (process.env.JAWSDB_URL) {
   db = mysql.createConnection(process.env.JAWSDB_URL);
+  // db = new Database({
+  //   host: "x40p5pp7n9rowyv6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  //   port: 3306,
+  //   user: "cpj7p6q4tnzs1prf",
+  //   password: "iurtoi7z3jglfr5t",
+  //   database: "q42zvidui88xge5p",
+  // });
 } else {
   db = new Database({
     host: "localhost",
