@@ -2,13 +2,9 @@
 
 ### Overview
 
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
+In this assignment,I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Followed the MVC design pattern; used Node and MySQL to query and route data in the app, and Handlebars to generate the HTML.
 
-### Read This
-
-When trying to connect remotely to your Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.
-
-### Before You Begin
+###
 
 - Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
 
@@ -16,32 +12,13 @@ When trying to connect remotely to your Heroku database on an open network such 
 
 - Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 
-- Your app will store every burger in a database, whether devoured or not.
-
-- [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM).
-
-#### App Setup
-
-1. Created a GitHub repo called `burger` and clone it to your computer.
-
-2. Made a package.json file by running `npm init` from the command line.
-
-3. Installed the Express npm package: `npm install express`.
-
-4. Created a server.js file.
-
-5. Installed the Handlebars npm package: `npm install express-handlebars`.
-
-6. Installed MySQL npm package: `npm install mysql`.
-
-7. Required the following npm packages inside of the server.js file:
-   - express
+- The app will store every burger in a database, whether devoured or not.
 
 #### DB Setup
 
-1. Inside your `burger` directory, create a folder named `db`.
+1. Inside my `burger` directory, create a folder named `db`.
 
-2. In the `db` folder, create a file named `schema.sql`. Write SQL queries this file that do the following:
+2. In the `db` folder, created a file named `schema.sql`. Write SQL queries this file that do the following:
 
    - Create the `burgers_db`.
    - Switch to or use the `burgers_db`.
@@ -54,7 +31,7 @@ When trying to connect remotely to your Heroku database on an open network such 
 
 4. Run the `schema.sql` and `seeds.sql` files into the mysql server from the command line
 
-5. Now you're going to run these SQL files.
+5. Now I can run these SQL files.
 
    - Make sure you're in the `db` folder of your app.
 
@@ -65,6 +42,69 @@ When trying to connect remotely to your Heroku database on an open network such 
    - Now insert the entries you defined in `seeds.sql` by running the file: `source seeds.sql`.
 
    - Close out of the MySQL command line tool: `exit`.
+
+#### Config Setup
+
+1. Inside the `burger` directory, create a folder named `config`.
+
+2. Created a `connection.js` file inside `config` directory.
+
+   - Inside the `connection.js` file, setup the code to connect Node to MySQL.
+
+   - Export the connection.
+
+3. Created an `orm.js` file inside `config` directory.
+
+   - Import (require) `connection.js` into `orm.js`
+
+   - In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
+
+     - `selectAll()`
+     - `insertOne()`
+     - `updateOne()`
+
+   - Export the ORM object in `module.exports`.
+
+#### Model setup
+
+- Inside the `burger` directory, create a folder named `models`.
+
+  - In `models`, make a `burger.js` file.
+
+    - Inside `burger.js`, import `orm.js` into `burger.js`
+
+    - Also inside `burger.js`, create the code that will call the ORM functions using burger specific input for the ORM.
+
+    - Export at the end of the `burger.js` file.
+
+#### Controller setup
+
+1. Inside the `burger` directory, create a folder named `controllers`.
+
+2. In `controllers`, create the `burgers_controller.js` file.
+
+3. Inside the `burgers_controller.js` file, import the following:
+
+   - Express
+   - `burger.js`
+
+4. Created the `router` for the app, and export the `router` at the end of your file.
+
+#### View setup
+
+1. Inside your `burger` directory, create a folder named `views`.
+
+   - Created the `index.handlebars` file inside `views` directory.
+
+   - Created the `layouts` directory inside `views` directory.
+
+     - Created the `main.handlebars` file inside `layouts` directory.
+
+     - Setup the `main.handlebars` file so it's able to be used by Handlebars.
+
+     - Setup the `index.handlebars` to have the template that Handlebars can render onto.
+
+     - Created a button in `index.handlebars` that will submit the user input into the database.
 
 #### Directory structure
 
@@ -105,3 +145,9 @@ All the recommended files and directories from the steps above should look like 
     └── layouts
         └── main.handlebars
 ```
+
+I submitted both the deployed Heroku link to your homework AND the link to the Github Repository!
+
+---
+
+**Good Luck!**
