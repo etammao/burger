@@ -4,6 +4,8 @@
 
 In this assignment,I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Followed the MVC design pattern; used Node and MySQL to query and route data in the app, and Handlebars to generate the HTML.
 
+The application is accessible under: https://agile-everglades-45248.herokuapp.com/
+
 ###
 
 - Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
